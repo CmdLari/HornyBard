@@ -149,5 +149,8 @@ async def on_message(msg):
         elif answer == 20:
             await msg.channel.send (random.choice(NCE))
 
-with open('hornyBard.txt') as fp:
-    client.run(fp.read().strip())
+## for running locally
+# with open('hornyBard.txt') as fp:
+# client.run(fp.read().strip())
+
+client.run(os.environ["token"])

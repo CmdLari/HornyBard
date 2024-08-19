@@ -1,13 +1,13 @@
 # syntax=docker/dockerfile:1
 # Build steps
-FROM python:3.11.9-alpine3.20 as builder
+FROM python:3.11.9-alpine3.20 AS builder
 
 # set work directory
 WORKDIR /usr/src/app
 
 # set environment variables
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
 
 # install native dependencies
 RUN apk update && apk add gcc python3-dev musl-dev linux-headers pcre-dev
