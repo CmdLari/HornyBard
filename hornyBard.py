@@ -9,6 +9,8 @@ intents = discord.Intents.default()
 intents.message_content = True
 client = discord.Client(intents=intents)
 
+azCounter = 2
+
 
 BRD = (
    "https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExdTJhZGJtejhlczBzcWc3emdmNDFpazE1YTZhaGd1dThtYWcxYXJmciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/5YqKU8tQUQmCLna20m/giphy.gif", 
@@ -93,8 +95,10 @@ SIG = (
 
 AZ = (
     "*Hands the tortle some whiskey*",
-    "Let's explode the tortle! >:)"
+    "Let's explode the tortle! >:)",
+    "*The tortle has been touched by Samael "+azCounter+" times*",
 )
+
 
 @client.event
 async def on_message(msg):
@@ -137,7 +141,8 @@ async def on_message(msg):
     if "siggi" in text or "sigi" in text:
         await msg.channel.send (random.choice(SIG))
     if msg.author.id == 247821469567025154:
-        await msg.channel.send (random.choice(AZ))        
+        await msg.channel.send (random.choice(AZ))
+        azCounter+=1        
 
     ## ACTIONS
     if "1d20" in text or "roll dice" in text:
