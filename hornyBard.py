@@ -99,6 +99,9 @@ AZ = (
     "*The tortle has been touched by Samael "+azCounter+" times*",
 )
 
+BEN = (
+    "I can offer tree fiddy for that painting, Samael.",
+)
 
 @client.event
 async def on_message(msg):
@@ -143,6 +146,8 @@ async def on_message(msg):
     if msg.author.id == 247821469567025154:
         await msg.channel.send (random.choice(AZ))
         azCounter+=1        
+    if msg.author.id == 223259938300887040:
+        await msg.channel.send(random.choice(BEN))
 
     ## ACTIONS
     if "1d20" in text or "roll dice" in text:
