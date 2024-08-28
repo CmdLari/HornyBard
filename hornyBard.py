@@ -96,7 +96,7 @@ SIG = (
 AZ = (
     "*Hands the tortle some whiskey*",
     "Let's explode the tortle! >:)",
-    "*The tortle has been touched by Samael "+azCounter+" times*",
+    "*The tortle has been touched by Samael "+str(azCounter)+" times*",
 )
 
 BEN = (
